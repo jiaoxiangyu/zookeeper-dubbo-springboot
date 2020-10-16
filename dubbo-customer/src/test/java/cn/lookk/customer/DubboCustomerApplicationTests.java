@@ -1,13 +1,13 @@
-package cn.lookk.zd;
+package cn.lookk.customer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ZookeeperDubboSpringbootApplicationTests {
+class DubboCustomerApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
