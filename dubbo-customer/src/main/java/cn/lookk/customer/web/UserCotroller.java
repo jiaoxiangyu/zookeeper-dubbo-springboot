@@ -32,8 +32,6 @@ public class UserCotroller {
     @Reference(version = "1.0.0")
     UserInfoService userInfoService;
 
-
-
     /**
      * @title:  findById
      * @description:  根据id查询
