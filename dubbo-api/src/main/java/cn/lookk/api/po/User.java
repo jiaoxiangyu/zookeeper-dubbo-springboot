@@ -1,4 +1,4 @@
-package cn.lookk.customer.po;
+package cn.lookk.api.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

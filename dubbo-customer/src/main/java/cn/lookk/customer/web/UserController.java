@@ -1,18 +1,13 @@
 package cn.lookk.customer.web;
 
-import cn.lookk.customer.service.UserInfoService;
-import cn.lookk.handleexception.exception.Assert;
+import cn.lookk.customer.service.IUserInfoService;
 import cn.lookk.handleexception.util.ResultUtil;
 import cn.lookk.handleexception.vo.Result;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
 
 
 /**
@@ -25,12 +20,12 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "/user/")
-public class UserCotroller {
+public class UserController {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserCotroller.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @Reference(version = "1.0.0")
-    UserInfoService userInfoService;
+    @Autowired
+    private IUserInfoService userInfoService;
 
     /**
      * @title:  findById
@@ -40,7 +35,7 @@ public class UserCotroller {
      */
     @RequestMapping(value = "findOne/{id}", method = RequestMethod.GET)
     public Result findOne(@PathVariable Long id) {
-        return ResultUtil.success(userInfoService.findOneById(id));
+        return ResultUtil.success(userInfoService.selectById(id));
     }
 
 
